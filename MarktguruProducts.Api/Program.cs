@@ -1,5 +1,8 @@
 namespace MarktguruProducts.Api
 {
+	using MarktguruProducts.Application;
+	using MarktguruProducts.Infrastructure;
+
 	public class Program
 	{
 		public static void Main(string[] args)
@@ -9,9 +12,13 @@ namespace MarktguruProducts.Api
 			// Add services to the container.
 
 			builder.Services.AddControllers();
-			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-			builder.Services.AddEndpointsApiExplorer();
-			builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen();
+
+            builder.Services
+				.AddEndpointsApiExplorer()
+				.AddApplication()
+				.AddInfrastructure();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 			var app = builder.Build();
 
