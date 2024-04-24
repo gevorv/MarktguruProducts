@@ -86,3 +86,8 @@
 /MarktguruProducts.Infrastructure/obj/MarktguruProducts.Infrastructure.csproj.nuget.g.targets
 /MarktguruProducts.Infrastructure/obj/project.assets.json
 /MarktguruProducts.Infrastructure/obj/project.nuget.cache
+*.json
+/MarktguruProducts.Infrastructure/obj/Debug/net6.0/MarktguruProducts.Infrastructure.csproj.CopyComplete
+/MarktguruProducts.Application/obj/Debug/net6.0/MarktguruProducts.Application.csproj.CopyComplete
+/MarktguruProducts.Api/obj/Debug/net6.0/MarktguruProducts.Api.csproj.CopyComplete
+/MarktguruProducts.Api/obj/Debug/net6.0/MarktguruProducts.Api.MvcApplicationPartsAssemblyInfo.cs
