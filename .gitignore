@@ -4,3 +4,6 @@
 
 /.vs/MarktguruProducts
 /MarktguruProducts.Application/obj/Debug/net6.0/MarktguruProducts.Application.AssemblyInfo.cs
+/MarktguruProducts.Domain/obj/Debug/net6.0/MarktguruProducts.Domain.AssemblyInfo.cs
+/MarktguruProducts.Domain/obj/Debug/net6.0/MarktguruProducts.Domain.AssemblyInfo.cs
+/MarktguruProducts.Domain/obj/Debug/net6.0/MarktguruProducts.Domain.AssemblyInfoInputs.cache
