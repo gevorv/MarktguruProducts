@@ -91,3 +91,6 @@
 /MarktguruProducts.Application/obj/Debug/net6.0/MarktguruProducts.Application.csproj.CopyComplete
 /MarktguruProducts.Api/obj/Debug/net6.0/MarktguruProducts.Api.csproj.CopyComplete
 /MarktguruProducts.Api/obj/Debug/net6.0/MarktguruProducts.Api.MvcApplicationPartsAssemblyInfo.cs
+/MarktguruProducts.Api/MarktguruProducts.Api.csproj.user
+/MarktguruProducts.Infrastructure/bin/Debug/net6.0/MarktguruProducts.Application.dll
+/MarktguruProducts.Infrastructure/bin/Debug/net6.0/MarktguruProducts.Application.pdb
