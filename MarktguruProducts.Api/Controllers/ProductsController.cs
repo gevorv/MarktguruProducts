@@ -1,24 +1,28 @@
 using MarktguruProducts.Application.Commands;
 using MarktguruProducts.Application.Queries;
 using MarktguruProducts.Application.Responses;
+using MarktguruProducts.Application.Services.Interfaces;
 using MarktguruProducts.Domain.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarktguruProducts.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductsController : ControllerBase
+	[Authorize]
+	[ApiController]
+    [Route("[controller]")]
+    public class ProductsController : ApiController
     {
         private readonly IMediator mediator;
 
-        public ProductsController(IMediator mediator)
-        {
-            this.mediator = mediator;
-        }
+		public ProductsController(IMediator mediator, IAuthenticationService authenticationService) : base(authenticationService)
+		{
+			this.mediator = mediator;
+		}
 
-        [HttpGet]
+		[HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllProducts()
         {
             var query = new GetAllProductsQuery();
@@ -29,6 +33,7 @@ namespace MarktguruProducts.Api.Controllers
         }
 
         [HttpGet()]
+        [AllowAnonymous]
         [Route("{productId:Guid}")]
         public async Task<IActionResult> GetProduct(Guid productId)
         {

@@ -8,16 +8,18 @@ namespace MarktguruProducts.Api
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+			ConfigurationManager builderConfiguration = builder.Configuration;
+			builderConfiguration.SetBasePath(Directory.GetCurrentDirectory());
 
 			// Add services to the container.
-
+			builder.Services.AddCors();
 			builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
 
             builder.Services
 				.AddEndpointsApiExplorer()
 				.AddApplication()
-				.AddInfrastructure();
+				.AddInfrastructure(builderConfiguration);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 			var app = builder.Build();
@@ -29,11 +31,17 @@ namespace MarktguruProducts.Api
 				app.UseSwaggerUI();
 			}
 
+			app.UseRouting();
+
+			app.UseCors(x => x
+				.AllowAnyOrigin()
+				.AllowAnyMethod()
+				.AllowAnyHeader());
+
 			app.UseHttpsRedirection();
 
+			app.UseAuthentication();
 			app.UseAuthorization();
-
-
 			app.MapControllers();
 
 			app.Run();
